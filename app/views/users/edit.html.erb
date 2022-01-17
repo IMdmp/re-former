@@ -1,4 +1,7 @@
-<%= form_with url:"/users", model: @User do |form| %>
+<%= form_with model: @user do |form| %>
+    <% @user.errors.full_messages_for(:body).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   <%= form.label :email, "Email:" %>
   <%= form.email_field :email %>
 
